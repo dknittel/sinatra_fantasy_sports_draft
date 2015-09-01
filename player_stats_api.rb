@@ -18,16 +18,16 @@ class AthleteStats
     							athlete_id: athlete_id
                               })
     # parameters = {enable=statistics}
-    
+
     if response.success?
       json = JSON.parse(response.body)
       json['results'].first['geometry']['location']
     else
-      p response
+      response
       # nil
     end
   end
 end
 
 athlete_stats = AthleteStats.new
-p athlete_stats.get_athlete_id(100).leagues
+p athlete_stats.get_athlete_id(100)
