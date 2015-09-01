@@ -1,0 +1,32 @@
+<div class="players">
+<% if @form_error %>
+<div class="red"><%= @form_error %></div>
+<% end %>
+
+<form action="/register" method="post">
+  <div class="input-field col s6">
+    <% if @user.errors[:login].any? %>
+      <div class="red"><%= @user.errors[:login].first %></div>
+    <% end %>
+    <input class="white_text" placeholder="Login" type="text" name="login" value="<%= @user.login %>"/>
+  </div>
+  <div>
+    <% if @user.errors[:password].any? %>
+      <div><%= @user.errors[:password].first %></div>
+    <% end %>
+    <div><input class="white_text" placeholder="Password" type="password" name="password" value=""/></div>
+  </div>
+  <div>
+    <% if @user.errors[:password_confirmation].any? %>
+      <div><%= @user.errors[:password_confirmation].first %></div>
+    <% end %>
+    <input placeholder="Confirm Password" class="font_size white_text" type="password" name="password_confirmation" value=""/>
+  </div>
+</br>
+  <input class="btn btn-primary" type="submit" value="Register"/>
+</form>
+
+</br>
+
+<a class="waves-effect waves-light btn white_text" href="/">Back</a>
+</div>

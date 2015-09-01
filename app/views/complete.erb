@@ -1,0 +1,18 @@
+<div class="complete1">
+Your draft is complete!
+</br>
+Here are your results:
+</br>
+</br>
+<% Team.where(draft_id: @draft.id) .each do |team| %>
+	Team <%= team.id %>:
+	<% Draftee.where(team_id: team.id).each do |draftee| %>
+		<div><%= Player.find(draftee.player_id).position %>: <%= Player.find(draftee.player_id).name %></div>
+	<% end %>
+	<br>
+<% end %>
+
+<br>
+<button class="btn btn-primary"><a class="white_text" href="/logout">Logout</a></button>
+</div>
+

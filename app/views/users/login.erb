@@ -1,0 +1,18 @@
+<div class="players">
+<% if @form_error %>
+<div class="red"><%= @form_error %></div>
+<% end %>
+
+<form action="/login" method="post">
+  <div class="input-field col s6">
+    <div ><input class="white_text"  placeholder="Login" type="text" name="username" value="<%= @login %>"/></div>
+  </div>
+  <div>
+    <div><input placeholder="Password" type="password" name="password" value=""/></div>
+  </div>
+</br>
+  <input class="btn btn-primary" type="submit" value="Login"/>
+</form>
+</br>
+<a class="waves-effect waves-light btn" href="/">Back</a>
+</div>

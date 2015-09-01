@@ -1,0 +1,37 @@
+<div class="white_text">
+<div class="float-left">
+<a class="white_text waves-effect waves-light btn" href="/logout">Logout</a>
+</div>
+<div class="float-right">
+<%= Team.where(draft_id: @draft.id).find_by(
+draft_position: @draft.current_team).name %> is picking
+</div>
+</br>
+</br>
+<div class="players2">
+<div id="available-players">
+<% Draftee.where(team_id: nil, draft_id: @draft.id).each do |draftee|%>
+	<div class="inline1">
+		<%= Player.find(draftee.player_id).name %>
+		<a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= Player.find(draftee.player_id).id %>">View Stats</a>
+		<form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
+	</br>
+	</div>
+<% end %>
+</div>
+</div>
+
+<div class="complete1">
+	Current Team:	
+</div>
+</br>
+</br>
+</div>
+
+
+	<% Draftee.where(draft_id: @draft.id, team_id: @team.id).each do |draftee| %>
+		<div class="complete1"><%= Player.find(draftee.player_id).position %>: <%= Player.find(draftee.player_id).name %></div>
+	</br>
+	<% end %>
+
+<button class="btn btn-primary finish-draft players hidden"><a class="white_text" href="/drafts/<%= @draft.id %>/complete">Finish Draft!</a></button>

@@ -1,0 +1,49 @@
+<div class="view_stats">
+<h1 class="white_text2"><%= @player.name %></h1>
+
+<table class="table table-striped white_back">
+	<tr>
+		<td>
+			Position
+		</td>
+		<td>
+			PPG
+		</td>
+		<td>
+			APG
+		</td>
+		<td>
+			RPG
+		</td>
+		<td>
+			SPG
+		</td>
+		<td>
+			Team
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= @player.position %>
+		</td>
+		<td>
+			<%= @player.ppg %>
+		</td>
+		<td>
+			<%= @player.apg %>
+		</td>
+		<td>
+			<%= @player.rpg %>
+		</td>
+		<td>
+			<%= @player.spg %>
+		</td>
+		<td>
+			<%= @player.nba_team %>
+		</td>
+	</tr>
+</table>
+
+</br>
+
+<button class="btn btn-primary"><a class="white_text" href="/drafts/<%= @draft.id %>">Back</a></button>

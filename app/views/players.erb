@@ -1,0 +1,11 @@
+<div class="players">
+<% Draftee.where(team_id: nil, draft_id: @draft.id).each do |draftee|%>
+	<div class="white_back">
+		<%= Player.find(draftee.player_id).name %>
+		<a href="/drafts/<%= @draft.id %>/players/<%= Player.find(draftee.player_id).id %>">View Stats</a>
+	</div>
+<% end %>
+
+<button class="btn btn-primary"><a class="white_text" href="/drafts/<%= @draft.id %>">Back</a></button>
+</div>
+
