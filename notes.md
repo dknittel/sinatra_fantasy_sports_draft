@@ -6,15 +6,7 @@ materialize for css
 
 heroku
 
-JS:
-ajax login and register
-JUST HIDE THE BUTTON INSTEAD OF THE 
-
-rspec:
 write rspec tests
-
-Pure:
-Get css and html template from pure website
 
 put a "select number of players per team" input on drafts/new page
 fix the fact that you have to click the text instead of the button on buttons
@@ -27,8 +19,10 @@ DONT NEED TO DROP DATABASE ANYMORE!
 Bugs:
 <!-- INSTEAD OF USING THE TEAM'S ID, YOU NEED TO USE DRAFT POSITION AND USE THE CURRENT TEAM FROM THE DRAFT TABLE TO FIND THE TEAM. THIS WILL FIX THE FACT THAT CURRENT TEAM HAS TO BE SET TO THE FIRST TEAM'S ID
 for second draft, it won't end when all the teams are full -->
-rspec not working
 NO! because stu had me do "@draft.draftees.create" to make the draftees -> draftees shouldn't have draft id cuz teams have it already?
+
+JS: (done)
+ajax login and register
 
 Tables: (done)
 User has many drafts

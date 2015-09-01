@@ -8,12 +8,15 @@ describe "index" do
 
 	describe 'drafts/new' do 
 		it 'should route to drafts creation page' do
+			post '/register', login: 'm', password: 'k', confirm: 'k'
+			# p auth_logged_in?
 			get '/drafts/new'
 			expect(last_response.status).to eq(200)
 		end
 
 		it 'should create the specified number of teams' do
-			# post '/drafts/new' {}
+			
+			expect{post '/drafts', num_teams: 4}.to change{Team.all.count}.by(4)
 		end
 	end
 

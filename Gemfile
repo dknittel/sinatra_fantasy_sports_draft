@@ -18,8 +18,10 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt-ruby'
+gem 'httparty'
 
 group :test do
+  gem 'dotenv'
   gem 'faker'
   gem 'rspec'
 end
