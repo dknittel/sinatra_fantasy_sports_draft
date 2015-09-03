@@ -3,7 +3,7 @@
 	<div class="white_text">Enter Team Names:</div>
 	<div class="row">
 		<% Team.where(draft_id: @draft.id).each do |team| %>
-		<form method="post" action="/drafts/<%= @draft.draft_id %>/teams" class="col s12">
+		<form method="post" action="/drafts/<%= @draft.id %>/teams" class="col s12">
 			<div class="row">
 				<div class="input-field col s6">
 					<input placeholder="Team Name" type="text" class="white_text" name="team[]">

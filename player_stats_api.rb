@@ -1,7 +1,6 @@
 require 'dotenv'
 require 'httparty'
 require 'json'
-require 'net/http'
 
 begin
   require 'dotenv'

@@ -19,7 +19,6 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt-ruby'
 gem 'httparty'
-gem 'net/http'
 # gem 'oauth'
 # gem 'devise'
 
