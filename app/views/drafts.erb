@@ -1,11 +1,12 @@
 <div class="white_text">
-<div class="float-left">
+<div class="float-left debug">
 <a class="white_text waves-effect waves-light btn" href="/logout">Logout</a>
 </div>
-<div class="float-right">
-<%= Team.where(draft_id: @draft.id).find_by(
-draft_position: @draft.current_team).name %> is picking
+
+<div class="float-right debug">
+<%= @team.name %> is picking
 </div>
+
 </br>
 </br>
 <div class="players2">
@@ -21,7 +22,7 @@ draft_position: @draft.current_team).name %> is picking
 </div>
 </div>
 
-<div class="complete1">
+<!-- <div class="complete1 debug">
 	Current Team:	
 </div>
 </br>
@@ -34,4 +35,4 @@ draft_position: @draft.current_team).name %> is picking
 	</br>
 	<% end %>
 
-<button class="btn btn-primary finish-draft players hidden"><a class="white_text" href="/drafts/<%= @draft.id %>/complete">Finish Draft!</a></button>
+<button class="btn btn-primary finish-draft players hidden debug"><a class="white_text" href="/drafts/<%= @draft.id %>/complete">Finish Draft!</a></button> -->

@@ -1,13 +1,20 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
   	create_table :players do |t|
-      t.string :name, null: false
-  		t.integer :ppg
-  		t.integer :apg
-  		t.integer :rpg
-  		t.integer :spg
-  		t.string :position
-  		t.string :nba_team
+      t.string :Name, null: false
+  		t.string :Team
+  		t.integer :Games
+  		t.integer :Minutes
+  		t.integer :FieldGoalsPercentage
+  		t.string :Position
+      t.integer :ThreePointersPercentage
+      t.integer :FreeThrowsPercentage
+      t.integer :Rebounds
+      t.integer :Assists
+      t.integer :Steals
+      t.integer :BlockedShots
+      t.integer :Turnovers
+      t.integer :Points
   		t.integer :pool_id
   		#include pic of player?
 

@@ -19,13 +19,5 @@
 </div>
 
 
-<div class="white_text">Select team names:</div>
-	<% Team.where(draft_id: @draft.id).each do |team| %>
-		<form action="/drafts/<%= @draft.id %>/teams" method="post">
-		<div class="white_text"><%= team.name %>:</div>
-  		<input name="team[]" value= "" />
-		</br>
-	<% end %>
-	<input class="btn btn-primary" type = "submit" value= "Submit" />
 
 
