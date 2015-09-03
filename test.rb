@@ -1,4 +1,5 @@
 require 'net/http'
+require 'json'
 
 uri = URI('http://api.nfldata.apiphany.com/nba/v2/JSON/PlayerSeasonStats/2015')
 uri.query = URI.encode_www_form({
@@ -14,4 +15,5 @@ response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https'
     http.request(request)
 end
 
-puts response.body
+array = JSON.parse(response.body)
+p array[0].class
