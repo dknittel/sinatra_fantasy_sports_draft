@@ -3,22 +3,17 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *//*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-.red {
-	color: red;
+
+
+.navbar1 {
+	position: relative;
+	margin-top: 3%;
+}
+.navbar1 > a {
+	position: relative;
+	float: right;
 }
 
-.float-left {
-	/*position: absolute;*/
-	float: left;
-	margin-right: 50px;
-	width: 600px;
-    margin-top: 50px;
-}
-
-.float-right {
-	/*position: absolute;*/
-    margin-top: 50px;
-}
 
 .players2 {
 	width: 600px;

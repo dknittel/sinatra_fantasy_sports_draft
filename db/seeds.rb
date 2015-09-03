@@ -24,6 +24,7 @@ response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https'
 end
 
 player_array = JSON.parse(response.body)
+player_array = player_array.dup
 player_array.each do |hash|
 	hash.delete('StatID')
 	hash.delete('TeamID')
@@ -59,7 +60,7 @@ player_array.each do |hash|
 	hash.delete('FantasyPoints')
 	hash.delete('PersonalFouls')
 end
-# p array[0].class
+p player_array[0]
  # player_array = [{name: 'Steph Curry', ppg: 30, apg: 23, rpg: 14, spg: 7, nba_team: 'Warriors', position: 'PG'}, 
  # {name:'Klay Thompson', ppg: 30, apg: 12, rpg: 10, spg: 3, nba_team: 'Warriors', position: 'SG'},
  # {name:'Draymond Green', ppg: 22, apg: 13, rpg: 15, spg: 5, nba_team: 'Warriors', position: 'PF'},
@@ -75,11 +76,28 @@ end
  # {name:'James Harden', ppg: 11, apg: 5, rpg: 10, spg: 2, nba_team: 'Rockets', position: 'SG'}]
 
 # player_array.gsub('\"', '')
+# p player_array[0]
 
 Pool.create(name: 'NBA 2015')
 @pool = Pool.first
 player_array.each do |player_stats|
-	# p player_stats
-	@pool.players.create(player_stats)
+	@pool.players.create(name: player_stats["Name"], team: player_stats["Team"], position: player_stats["Position"], games: player_stats["Games"], field_goals_percentage: player_stats["FieldGoalsPercentage"], three_pointers_percentage: player_stats["ThreePointersPercentage"], free_throws_percentage: player_stats["FreeThrowsPercentage"], rebounds: player_stats["Rebounds"], assists: player_stats["Assists"], steals: player_stats["Steals"], blocked_shots: player_stats["BlockedShots"], turnovers: player_stats["Turnovers"], points: player_stats["Points"])
 end
+
+	# player_stats.symbolize_keys!
+
+# new_array = []
+# # p player_array
+# player_array.each do |player_stats|
+# 	new_hash = {}
+# 	player_stats.each do |key, value|
+# 		new_hash[key.downcase] = value
+# 		new_array << new_hash
+# 	end
+# end
+# new_array.each do |player_stats|
+# 	@pool.players.create(player_stats)
+# end
+#  	p new_array
+# end
 

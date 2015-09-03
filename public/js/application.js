@@ -38,10 +38,11 @@ function selectPlayer() {
 			$(button).parent().parent().hide();
 			if(response.full_teams){
 				$('.finish-draft').removeClass('hidden');
-				$('.float-right').html('The draft is complete')
+				$('.current-team').html('The draft is complete');
+				$('.select-player').addClass('hidden');
 			}
 			else {
-				$('.float-right').html(response.team_name + " is picking");
+				$('.current-team').html(response.team_name + " is picking");
 			}
 		}
 		var data = set(button)
@@ -69,55 +70,3 @@ function register() {
 	});
 }
 
-
-
-
-	// $('.select-player').on('click', function(e){
-	// 	e.preventDefault();
-	// 	console.log("button clicked");
-	// 	console.log(this);
-	// 	var button = this;
-	// 	playerIndex = set(this);
-	// 	console.log(playerIndex);
-	// 	var url = $(this).attr("href")
-	// 	var addPlayerToTeam = $.ajax({
-	// 		method: 'post',
-	// 		url: url,
-	// 		dataType: 'json',
-	// 		data: {player_id: playerIndex}
-	// 	});
-	// 	addPlayerToTeam.done(function(response){
-	// 		console.log("it worked");
-	// 		console.log(response);
-	// 		counter += 1;
-	// 		$(button).parent().parent().hide();
-	// 		console.log(counter)
-	// 		if(response.full_teams){
-	// 			$('.finish-draft').removeClass('hidden');
-	// 			$('.float-right').html('The draft is complete')
-	// 		}
-	// 		else {
-	// 			$('.float-right').html(response.team_name + " is picking");
-	// 		}
-	// 	});
-	// 	addPlayerToTeam.fail(function(response){
-	// 		console.log("this didn't work");
-	// 		console.log(response);
-	// 	});
-	// })
-
-// 	$.post('/buyitem', { key1: 'value1', key2: 'value2' }, function(result) {
-//     alert('successfully posted key1=value1&key2=value2');
-// });
-
-// $( "#autocomplete" ).autocomplete({
-//   source: [ "Steph Curry", "Klay Thompson", "TEST" ]
-// });
-
-// 	$('#autocomplete').autocomplete({
-//     serviceUrl: '/drafts/:id', //how is it gonna get :id?
-//     onSelect: function (suggestion) {
-//         alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
-//     }
-// });
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()

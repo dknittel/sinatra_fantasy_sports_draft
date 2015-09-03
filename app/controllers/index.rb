@@ -44,8 +44,11 @@ get '/drafts/:id' do
 
   @draftee = Draftee.new
   @draft = Draft.find(params[:id])
+  @team = Team.where(draft_id: @draft.id).where(
+draft_position: 1)
   @team.name
   if full_teams?(@draft.id)
+    p 'yoooooooooooooooooooooooooooooooooooooooooooo'
     @full_teams = true
     # redirect "/drafts/#{@draft.id}/complete"
   end

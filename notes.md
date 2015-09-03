@@ -1,3 +1,5 @@
+Fix view_stats page, heroku, sort players by ppg?, change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter
+
 TRY: fantasydata: already have key, really cool actually but not sure if it will work outside of their console,
 IF GET KEY: xmlstats: BEST IF you can get access to key in time; VERY specific examples with Ruby code; still waiting for invitation from them 
 sportradar: need api key; seems to have good access to data and clear and simple instructions

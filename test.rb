@@ -22,8 +22,8 @@ response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https'
     http.request(request)
 end
 
-array = JSON.parse(response.body)
-array.each do |hash|
+player_array = JSON.parse(response.body)
+player_array.each do |hash|
 	hash.delete('StatID')
 	hash.delete('TeamID')
 	hash.delete('PlayerID')
@@ -59,4 +59,9 @@ array.each do |hash|
 	hash.delete('PersonalFouls')
 end
 
-p array[0]
+p player_array[0].symbolize_keys
+# player_array.each do |player_stats|
+# 	player_stats.symbolize_keys!
+# 	p player_stats
+# 	# @pool.players.create(player_stats)
+# end
