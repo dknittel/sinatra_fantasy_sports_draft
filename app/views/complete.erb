@@ -5,7 +5,7 @@ Here are your results:
 </br>
 </br>
 <% Team.where(draft_id: @draft.id) .each do |team| %>
-	Team <%= team.id %>:
+	<%= team.name %>:
 	<% Draftee.where(team_id: team.id).each do |draftee| %>
 		<div><%= Player.find(draftee.player_id).position %>: <%= Player.find(draftee.player_id).name %></div>
 	<% end %>

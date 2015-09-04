@@ -1,25 +1,6 @@
-Fix view_stats page, heroku, sort players by ppg?, change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter
+heroku, sort players by ppg?, change num of players per team to at least 5, login is not working??, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
 
-TRY: fantasydata: already have key, really cool actually but not sure if it will work outside of their console,
-IF GET KEY: xmlstats: BEST IF you can get access to key in time; VERY specific examples with Ruby code; still waiting for invitation from them 
-sportradar: need api key; seems to have good access to data and clear and simple instructions
-Yahoo: seems like you have to get one player at a time
-CBS: does it even have nba?
-
-
-
-Tuesday night: pick API
-wed night: read and understand documentation and do heroku
-thurs day: set up key and get data from API
-thurs night: finish API implementation, test site, fix CSS (on drafts page)
-If time: put a "select number of players per team" input on drafts/new page
-
-
-API
-
-materialize for css
-
-heroku
+heroku:make dotenv compatibale,then do heroku run rake db:seed
 
 write rspec tests
 
