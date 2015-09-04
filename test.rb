@@ -14,7 +14,7 @@ uri.query = URI.encode_www_form({
 
 request = Net::HTTP::Get.new(uri.request_uri)
 # Request headers
-request['Ocp-Apim-Subscription-Key'] = ENV['Ocp_Apim_Subscription_Key']#d6419bdf515e4574a431f73be3a3721f'
+request['Ocp-Apim-Subscription-Key'] = ENV['Ocp_Apim_Subscription_Key']
 # Request body
 request.body = "{body}"
 

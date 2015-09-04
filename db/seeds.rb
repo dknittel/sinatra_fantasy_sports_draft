@@ -1,4 +1,3 @@
-require 'dotenv'
 require 'httparty'
 require 'json'
 
@@ -15,7 +14,7 @@ uri.query = URI.encode_www_form({
 
 request = Net::HTTP::Get.new(uri.request_uri)
 # Request headers
-request['Ocp-Apim-Subscription-Key'] = ENV['Ocp_Apim_Subscription_Key']#'d6419bdf515e4574a431f73be3a3721f'
+request['Ocp-Apim-Subscription-Key'] = ENV['Ocp_Apim_Subscription_Key']
 # Request body
 request.body = "{body}"
 
@@ -61,7 +60,7 @@ player_array.each do |hash|
 	hash.delete('PersonalFouls')
 end
 p player_array[0]
- # player_array = [{name: 'Steph Curry', ppg: 30, apg: 23, rpg: 14, spg: 7, nba_team: 'Warriors', position: 'PG'}, 
+ # player_array = [{name: 'Steph Curry', ppg: 30, apg: 23, rpg: 14, spg: 7, nba_team: 'Warriors', position: 'PG'},
  # {name:'Klay Thompson', ppg: 30, apg: 12, rpg: 10, spg: 3, nba_team: 'Warriors', position: 'SG'},
  # {name:'Draymond Green', ppg: 22, apg: 13, rpg: 15, spg: 5, nba_team: 'Warriors', position: 'PF'},
  # {name:'Harrison Barnes', ppg: 21, apg: 12, rpg: 14, spg: 4, nba_team: 'Warriors', position: 'SF'},
