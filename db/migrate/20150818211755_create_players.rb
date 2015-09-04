@@ -16,7 +16,6 @@ class CreatePlayers < ActiveRecord::Migration
       t.integer :turnovers
       t.integer :points
   		t.integer :pool_id
-      t.integer :points_rank
   		#include pic of player?
 
   		t.timestamps

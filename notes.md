@@ -2,10 +2,12 @@ change num of players per team to at least 5, create options for pool on draft_n
 
 BUG: when you click view stats, the page refreshes so all the players that were picked come back. Solution: ajax to and from the view stats page so the drafts page never resets
 
+add images
+
 write rspec tests
 
-add filter button so you can filter by team, position. Maybe a sort button too but these might have the issue with below:
-sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players: (SOLUTION create a :ppg_rank column in player table that you create in seed file and have ajax call select player based on that)
+add filter button so you can filter by team, position. Maybe a sort button too <!-- but these might have the issue with below: -->
+<!-- sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players: (SOLUTION create a :ppg_rank column in player table that you create in seed file and have ajax call select player based on that)
 erb code for above:
 <div class="players2">
   <div id="available-players">
@@ -32,7 +34,7 @@ erb code for above:
   <% end %>
 </div>
 </div>
-</div>
+</div> -->
 
 
 Note:
