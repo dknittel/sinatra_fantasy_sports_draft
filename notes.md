@@ -1,4 +1,4 @@
-heroku, sort players by ppg?, change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
+heroku, sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players, change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
 
 heroku:make dotenv compatibale,then do heroku run rake db:seed
 
