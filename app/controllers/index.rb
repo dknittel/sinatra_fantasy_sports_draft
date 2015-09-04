@@ -67,7 +67,7 @@ end
 
 post '/drafts/:id' do
   @draft = Draft.find(params[:id])
-  @player = Player.find(params[:player_id])
+  @player = Player.find_by(points_rank: params[:player_id])
   @draftee = Draftee.where(draft_id: @draft.id).find_by(player_id: @player.id)
   @team = Team.find_by(draft_position: @draft.current_team, draft_id: @draft.id)
   @draftee.team_id = @team.id

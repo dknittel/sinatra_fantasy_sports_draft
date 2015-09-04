@@ -10,22 +10,23 @@
 	<!-- </div> -->
 
 </br>
+
+
 <div class="players2">
-	<div id="available-players">
-		<% Draftee.where(team_id: nil, draft_id: @draft.id).each do |draftee|%>
-		<div class="inline1">
-			<%= Player.find(draftee.player_id).name %>
-			<a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= Player.find(draftee.player_id).id %>">View Stats</a>
-			<form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
-		</br>
-	</div>
-	<% end %>
-</div>
+  <div id="available-players">
+    <% Player.order(points: :desc).each do |player|%>
+    <div class="inline1">
+      <%= player.name %>
+      <a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= player.id %>">View Stats</a>
+      <form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
+    </br>
+  </div>
+  <% end %>
 </div>
 </div>
 
 <!-- <div class="complete1 debug">
-	Current Team:	
+	Current Team:
 </div>
 </br>
 </br>
