@@ -66,7 +66,6 @@ player_array.each do |player_stats|
 	@pool.players.create(name: player_stats["Name"], team: player_stats["Team"], position: player_stats["Position"], games: player_stats["Games"], field_goals_percentage: player_stats["FieldGoalsPercentage"], three_pointers_percentage: player_stats["ThreePointersPercentage"], free_throws_percentage: player_stats["FreeThrowsPercentage"], rebounds: player_stats["Rebounds"], assists: player_stats["Assists"], steals: player_stats["Steals"], blocked_shots: player_stats["BlockedShots"], turnovers: player_stats["Turnovers"], points: player_stats["Points"])
 end
 
-p player_array
 
 # p player_array[0]
  # player_array = [{name: 'Steph Curry', ppg: 30, apg: 23, rpg: 14, spg: 7, nba_team: 'Warriors', position: 'PG'},

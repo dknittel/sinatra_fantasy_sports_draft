@@ -1,10 +1,10 @@
-heroku, , change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
-
-heroku:make dotenv compatibale,then do heroku run rake db:seed
+change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
 
 write rspec tests
 
-sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players:
+add filter button so you can filter by team, position. Maybe a sort button too but these might have the issue with below:
+sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players: (SOlUTION create a :ppg_rank column in player table that you create in seed file and have ajax call select player based on that)
+erb code for above:
 <div class="players2">
   <div id="available-players">
     <% Player.order(points: desc).each do |player|%>
@@ -66,25 +66,25 @@ create authentication for passwords
     <form id="signup" action="/register" method="post">
 
         <div class="header">
-        
+
             <h3>Sign Up</h3>
-            
-            
+
+
         </div>
-        
+
         <div class="sep"></div>
 
         <div class="inputs">
-        
+
             <input type="email" placeholder="Login" autofocus />
-        
+
             <input type="password" placeholder="Password" />
           <input type="password" placeholder="Confirm" name="password_confirmation" value=""/>
-            
 
-            
+
+
             <input id="submit" value="Register"/>
-        
+
         </div>
 
     </form>
