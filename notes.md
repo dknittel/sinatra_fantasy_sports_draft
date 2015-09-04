@@ -1,9 +1,22 @@
-heroku, sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players, change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
+heroku, , change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page
 
 heroku:make dotenv compatibale,then do heroku run rake db:seed
 
 write rspec tests
 
+sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players:
+<div class="players2">
+  <div id="available-players">
+    <% Player.order(points: desc).each do |player|%>
+    <div class="inline1">
+      <%= player.name %>
+      <a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= player.id %>">View Stats</a>
+      <form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
+    </br>
+  </div>
+  <% end %>
+</div>
+</div>
 
 
 Note:
