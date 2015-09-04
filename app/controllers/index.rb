@@ -56,7 +56,7 @@ draft_position: 1)
     @draft.current_team = 1
     @draft.save
   end
-  @team = Team.find_by(draft_position: @draft.current_team)
+  @team = Team.where(draft_id: @draft.id).find_by(draft_position: @draft.current_team)
 
   if request.xhr?
     {full_teams: @full_teams, team_name: @team.name}.to_json
