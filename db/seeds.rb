@@ -8,7 +8,9 @@ rescue LoadError
   puts 'Skipping Dotenv - remember to set environment variables directly'
 end
 
-uri = URI('http://api.nfldata.apiphany.com/nba/v2/JSON/PlayerSeasonStats/2015')
+uri = URI('http://api.fantasydata.net/nba/v2/JSON/PlayerSeasonStats/2015')
+#Old url:
+# uri = URI('http://api.nfldata.apiphany.com/nba/v2/JSON/PlayerSeasonStats/2015')
 uri.query = URI.encode_www_form({
 })
 
