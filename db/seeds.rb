@@ -68,11 +68,6 @@ player_array.each do |player_stats|
 	@pool.players.create(name: player_stats["Name"], team: player_stats["Team"], position: player_stats["Position"], games: player_stats["Games"], field_goals_percentage: player_stats["FieldGoalsPercentage"], three_pointers_percentage: player_stats["ThreePointersPercentage"], free_throws_percentage: player_stats["FreeThrowsPercentage"], rebounds: player_stats["Rebounds"], assists: player_stats["Assists"], steals: player_stats["Steals"], blocked_shots: player_stats["BlockedShots"], turnovers: player_stats["Turnovers"], points: player_stats["Points"])
 end
 
-Player.order(points: :desc).each_with_index do |player, index|
-	player.points_rank = index + 1
-	player.save
-end
-
 
 
 # p player_array[0]

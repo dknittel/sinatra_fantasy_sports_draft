@@ -2,6 +2,7 @@ $(document).ready(function() {
 	selectPlayer();
 	login();
 	register();
+	viewStats();
 });
 
 function ajaxCall(method, url, data, dataType, callback) {
@@ -18,16 +19,27 @@ function ajaxCall(method, url, data, dataType, callback) {
 		callback(response);
 	})
 	.fail(function(response){
-		console.log("it didn't worked");
+		console.log("it didn't work");
 		console.log(response);
 	})
 }
 
-	function set(button) {
-		var index = $(button).parent().parent().index();
-		return index + 1;
-	}
-	var counter = 0
+function viewStats() {
+	$('#view-stats').on('click', function(e){
+		var button = this;
+		e.preventDefault();
+		function callback(response) {
+		}
+	ajaxCall('post', $(button).attr("href"), {player_id: data}, 'json', callback);
+	});
+}
+
+function set(button) {
+	var index = $(button).parent().parent().index();
+	return index + 1;
+}
+
+var counter = 0
 
 function selectPlayer() {
 	$('.select-player').on('click', function(e){
@@ -69,4 +81,3 @@ function register() {
 		ajaxCall('get', '/register', null, 'html', callback);
 	});
 }
-

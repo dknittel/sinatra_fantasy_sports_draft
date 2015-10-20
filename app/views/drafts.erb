@@ -33,10 +33,10 @@
 </div>
 
 
-	<% Draftee.where(draft_id: @draft.id, team_id: @team.id).each do |draftee| %>
-		<div class="complete1"><%= Player.find(draftee.player_id).position %>: <%= Player.find(draftee.player_id).name %></div>
+	<%# Draftee.where(draft_id: @draft.id, team_id: @team.id).each do |draftee| %>
+		<div class="complete1"><%#= Player.find(draftee.player_id).position %>: <%#= Player.find(draftee.player_id).name %></div>
 	</br>
-	<% end %> -->
+	<%# end %> -->
 
 
-	<a class="waves-effect waves-light btn white_text hidden finish-draft" href="/drafts/<%= @draft.id %>/complete">Finish Draft!</a>
+	<a id="view-stats" class="waves-effect waves-light btn white_text hidden finish-draft" href="/drafts/<%= @draft.id %>/complete">Finish Draft!</a>

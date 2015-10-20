@@ -1,5 +1,7 @@
 change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page, create more errors and validations for user input
 
+put transparent background around text on complete page and possibly other pages
+
 include current team on drafts page
 
 BUG: when you click view stats, the page refreshes so all the players that were picked come back. Solution: ajax to and from the view stats page so the drafts page never resets
