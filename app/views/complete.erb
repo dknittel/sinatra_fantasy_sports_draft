@@ -4,15 +4,15 @@ Your draft is complete!
 Here are your results:
 </br>
 </br>
-<% Team.where(draft_id: @draft.id) .each do |team| %>
-	Team <%= team.id %>:
+<% Team.where(draft_id: @draft.id).each do |team| %>
+	<%= team.name %>:
 	<% Draftee.where(team_id: team.id).each do |draftee| %>
-		<div><%= Player.find(draftee.player_id).position %>: <%= Player.find(draftee.player_id).name %></div>
+		<div><%= draftee.player.position %>: <%= draftee.player.name %></div>
 	<% end %>
 	<br>
 <% end %>
 
 <br>
-<button class="btn btn-primary"><a class="white_text" href="/logout">Logout</a></button>
+<button class="white_text waves-effect waves-light btn"><a class="white_text" href="/logout">Logout</a></button>
 </div>
 

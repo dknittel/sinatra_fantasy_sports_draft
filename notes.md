@@ -1,15 +1,43 @@
-API
+change num of players per team to at least 5, create options for pool on draft_new page so user knows what to enter, test site, If time: put a "select number of players per team" input on drafts/new page, create more errors and validations for user input
 
-oauth google login
+include current team on drafts page
 
-materialize for css
+BUG: when you click view stats, the page refreshes so all the players that were picked come back. Solution: ajax to and from the view stats page so the drafts page never resets
 
-heroku
+add images
 
 write rspec tests
 
-put a "select number of players per team" input on drafts/new page
-fix the fact that you have to click the text instead of the button on buttons
+add filter button so you can filter by team, position. Maybe a sort button too <!-- but these might have the issue with below: -->
+<!-- sort players by ppg?: don't use draftees and just do players orderby(points).each => now the complete page is registering the wrong players being selected so the complete page displays wrong players: (SOLUTION create a :ppg_rank column in player table that you create in seed file and have ajax call select player based on that)
+erb code for above:
+<div class="players2">
+  <div id="available-players">
+    <% Player.order(points: desc).each do |player|%>
+    <div class="inline1">
+      <%= player.name %>
+      <a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= player.id %>">View Stats</a>
+      <form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
+    </br>
+  </div>
+  <% end %>
+</div>
+</div>
+
+<div class="players2">
+  <div id="available-players">
+    <% Draftee.where(team_id: nil, draft_id: @draft.id).each do |draftee|%>
+    <div class="inline1">
+      <%= draftee.player.name %>
+      <a class="white_text btn btn-primary inline1" href="/drafts/<%= @draft.id %>/players/<%= draftee.player.id %>">View Stats</a>
+      <form method="post" action="/drafts/<%= @draft.id %>" class="inline1"><input class="btn btn-primary select-player inline1" type="submit" value="Select Player"/></form>
+    </br>
+  </div>
+  <% end %>
+</div>
+</div>
+</div> -->
+
 
 Note:
 value field in input in a post form is what is gonna be displayed
@@ -58,25 +86,25 @@ create authentication for passwords
     <form id="signup" action="/register" method="post">
 
         <div class="header">
-        
+
             <h3>Sign Up</h3>
-            
-            
+
+
         </div>
-        
+
         <div class="sep"></div>
 
         <div class="inputs">
-        
+
             <input type="email" placeholder="Login" autofocus />
-        
+
             <input type="password" placeholder="Password" />
           <input type="password" placeholder="Confirm" name="password_confirmation" value=""/>
-            
 
-            
+
+
             <input id="submit" value="Register"/>
-        
+
         </div>
 
     </form>

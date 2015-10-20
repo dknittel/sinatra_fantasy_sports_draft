@@ -4,6 +4,7 @@ class CreateDraftees < ActiveRecord::Migration
   		t.references :team
   		t.references :player
   		t.references :draft
+      # t.boolean :picked
   	end
   end
 end
