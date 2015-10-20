@@ -24,15 +24,18 @@ function ajaxCall(method, url, data, dataType, callback) {
 	})
 }
 
-function viewStats() {
-	$('#view-stats').on('click', function(e){
-		var button = this;
-		e.preventDefault();
-		function callback(response) {
-		}
-	ajaxCall('post', $(button).attr("href"), {player_id: data}, 'json', callback);
-	});
-}
+// function viewStats() {
+// 	$('#view-stats').on('click', function(e){
+// 		var button = this;
+// 		e.preventDefault();
+// 		function callback(response) {
+// 		//$('#yield').replaceWith(response);
+// 		}
+// 	//fix ids below, BE CAREFUL, the url below was messing up getting to the drafts page
+// 	ajaxCall('get', '/drafts/:id/players/:player_id', null, 'html', callback);
+// 	});
+// }
+//may need another function that ajaxes back to previous
 
 function set(button) {
 	var index = $(button).parent().parent().index();
