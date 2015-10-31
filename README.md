@@ -4,6 +4,8 @@ URL: https://fantasy-sports-draft.herokuapp.com/drafts/2/teams
 
 Daniel Knittel
 
+![pic](Selection_018.png)
+
 Purpose: The purpose of this website is to allow users to create drafts and select players to their teams with their friends.
 
 Target Users: The target users are people who are sports fans and who enjoy playing fantasy sports and drafting players.
@@ -26,4 +28,3 @@ How to clone the repo: Go to the above url and click on the fork button in the t
 ![pic](Selection_015.png)
 ![pic](Selection_016.png)
 ![pic](Selection_017.png)
-![pic](Selection_018.png)
