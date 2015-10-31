@@ -1,6 +1,6 @@
 # Fantasy Sports Draft
 
-URL: https://fantasy-sports-draft.herokuapp.com/drafts/2/teams
+URL: https://fantasy-sports-draft.herokuapp.com
 
 **Daniel Knittel**
 
